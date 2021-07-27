@@ -6,12 +6,6 @@ pipeline {
     }
 
     stages {
-      stage('fetch_latest_code') {
-        steps {
-          git credentialsId: '79ffeae4-a3a4-4b85-86b3-a1929ae3fe21', url: 'https://github.com/andywei8071/terraform1.git'
-        }
-      }
-
       stage('TF Init&Plan') {
         steps {
           sh '/usr/local/bin/terraform init'
